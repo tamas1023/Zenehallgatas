@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\ZeneController.cs" />
     <Compile Include="DAO\IZeneDao.cs" />
+    <Compile Include="DAO\ZeneDaoImpl.cs" />
     <Compile Include="Views\Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddOrModify.resx">
+      <DependentUpon>AddOrModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
