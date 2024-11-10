@@ -17,11 +17,12 @@ namespace Zenehallgatas
     {
 
         ZeneController controller = ZeneController.getInstance();
+        List<Zene> allZene;
         public Search()
         {
             InitializeComponent();
             
-            List<Zene> allZene = controller.getAllZeneList();
+            allZene = controller.getAllZeneList();
             Console.WriteLine(allZene);
             dataGridView1.Columns.Clear();
 
@@ -58,7 +59,7 @@ namespace Zenehallgatas
         {
             Form addormodify = new AddOrModify("modositas");
             addormodify.Show();
-            Hide();
+            //();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -88,8 +89,25 @@ namespace Zenehallgatas
                 Console.Write(" " + row1.Cells[4].Value.ToString());
 
 
+                Form addormodify = new AddOrModify("modositas");
+                addormodify.Show();
+                Hide();
+
                 // Your code here
             }
+        }
+
+        private void searchBTN_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(searchTBOX.Text);
+            List<Zene> fileredZene = allZene.FindAll((item) =>
+            {
+                Console.WriteLine(item.ToString());
+                return item.Equals(searchTBOX.Text);
+            });
+            Console.WriteLine(allZene.Count);
+            Console.WriteLine(fileredZene.Count);
+
         }
     }
 }

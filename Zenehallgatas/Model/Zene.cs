@@ -47,6 +47,12 @@ namespace Zenehallgatas.Model
             };
         }
 
+        override
+        public string ToString()
+        {
+            return id.ToString() + " "+title+" "+performer+" "+releaseDate+" "+length.ToString()+" "+priority.ToString();
+        }
+
         public int Id { get { return id; } }
         public string Title { get => title; set => title = value; }
         public string Performer { get => performer; set => performer = value; }

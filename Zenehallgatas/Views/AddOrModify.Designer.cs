@@ -54,14 +54,14 @@
             this.keresesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(715, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(715, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // keresesToolStripMenuItem
             // 
             this.keresesToolStripMenuItem.Name = "keresesToolStripMenuItem";
-            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
             this.keresesToolStripMenuItem.Text = "kereses";
             this.keresesToolStripMenuItem.Click += new System.EventHandler(this.keresesToolStripMenuItem_Click);
             // 
@@ -79,7 +79,7 @@
             // releaseDateNumeric
             // 
             this.releaseDateNumeric.Location = new System.Drawing.Point(335, 246);
-            this.releaseDateNumeric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.releaseDateNumeric.Margin = new System.Windows.Forms.Padding(4);
             this.releaseDateNumeric.Maximum = new decimal(new int[] {
             1661992960,
             1808227885,
@@ -182,6 +182,7 @@
             this.addOrModifyBTN.TabIndex = 12;
             this.addOrModifyBTN.Text = "button1";
             this.addOrModifyBTN.UseVisualStyleBackColor = true;
+            this.addOrModifyBTN.Click += new System.EventHandler(this.addOrModifyBTN_Click);
             // 
             // AddOrModify
             // 
@@ -201,7 +202,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddOrModify";
             this.Text = "HozzadasVagyModositas";

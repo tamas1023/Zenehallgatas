@@ -38,6 +38,10 @@
             this.createdDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchTBOX = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchBTN = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -87,12 +91,12 @@
             this.createdDate,
             this.length,
             this.priority});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 93);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1315, 588);
+            this.dataGridView1.Size = new System.Drawing.Size(1154, 537);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -139,11 +143,54 @@
             this.priority.Visible = false;
             this.priority.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label1.Location = new System.Drawing.Point(1177, 93);
+            this.label1.MaximumSize = new System.Drawing.Size(170, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 54);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Dupla katt az egyes sor elemeikre a módosításhoz";
+            // 
+            // searchTBOX
+            // 
+            this.searchTBOX.Location = new System.Drawing.Point(82, 48);
+            this.searchTBOX.Name = "searchTBOX";
+            this.searchTBOX.Size = new System.Drawing.Size(304, 22);
+            this.searchTBOX.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.Location = new System.Drawing.Point(13, 52);
+            this.label2.MaximumSize = new System.Drawing.Size(170, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Keresés";
+            // 
+            // searchBTN
+            // 
+            this.searchBTN.Location = new System.Drawing.Point(405, 47);
+            this.searchBTN.Name = "searchBTN";
+            this.searchBTN.Size = new System.Drawing.Size(75, 23);
+            this.searchBTN.TabIndex = 5;
+            this.searchBTN.Text = "Keresés";
+            this.searchBTN.UseVisualStyleBackColor = true;
+            this.searchBTN.Click += new System.EventHandler(this.searchBTN_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 645);
+            this.Controls.Add(this.searchBTN);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.searchTBOX);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -172,6 +219,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn length;
         private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox searchTBOX;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button searchBTN;
     }
 }
 

@@ -13,19 +13,20 @@ namespace Zenehallgatas.Views
     public partial class AddOrModify : Form
     {
         //hozzaadas vagy modositas
-        private string szoveg;
+        private bool isAdd;
         public AddOrModify(string szoveg)
         {
             InitializeComponent();
             
-            this.szoveg = szoveg;
 
             if (szoveg == "hozzaadas")
             {
+                isAdd = true;
                 AddInitialize();
             }
             else
             {
+                isAdd = false;
                 ModifyInitialize();
             }
         }
@@ -56,6 +57,36 @@ namespace Zenehallgatas.Views
         private void AddOrModify_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void addOrModifyBTN_Click(object sender, EventArgs e)
+        {
+            if(isAdd)
+            {
+                AddZene();
+            }
+            else
+            {
+                ModifyZene();
+            }
+        }
+
+        private void AddZene()
+        {
+            Console.WriteLine(titleTB.Text);
+            Console.WriteLine(performerTB.Text);
+            Console.WriteLine(releaseDateNumeric.Text);
+            Console.WriteLine(lengthNumeric.Text);
+            Console.WriteLine(priorityNumeric.Text);
+        }
+
+        private void ModifyZene()
+        {
+            Console.WriteLine(titleTB.Text);
+            Console.WriteLine(performerTB.Text);
+            Console.WriteLine(releaseDateNumeric.Text);
+            Console.WriteLine(lengthNumeric.Text);
+            Console.WriteLine(priorityNumeric.Text);
         }
     }
 }
