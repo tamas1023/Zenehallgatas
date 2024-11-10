@@ -20,16 +20,30 @@ namespace Zenehallgatas
         public Search()
         {
             InitializeComponent();
+            
             List<Zene> allZene = controller.getAllZeneList();
             Console.WriteLine(allZene);
-            //new Zene(1, "Cím", "Valki", 2024, 1);
             dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = allZene;
+
+            
+            dataGridView1.AllowUserToOrderColumns = true;
+
+            dataGridView1.Columns.Add("id", "id");
+            dataGridView1.Columns.Add ("title", "Cím");
+            dataGridView1.Columns.Add("performer", "Előadó");
+            dataGridView1.Columns.Add("releaseDate", "Kiadás éve");
+            dataGridView1.Columns.Add("length", "Hossz");
+            dataGridView1.Columns.Add("priority", "Prioritás");
+
+            foreach (Zene zene in allZene)
+            {
+                dataGridView1.Rows.Add(zene.toGridView());
+            }
+
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "Cím";
-            dataGridView1.Columns[2].HeaderText = "Előadó";
-            dataGridView1.Columns[3].HeaderText = "Kiadás éve";
-            dataGridView1.Columns[4].Visible = false ;
+            dataGridView1.Columns[5].Visible = false;
+
+            //a prioritás szerinti rendezést majd meg kell oldani
         }
 
         private void ujHozzaadasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,6 +68,11 @@ namespace Zenehallgatas
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             Console.WriteLine("Clickelés elvilekben ez mindig lefut");
             if (e.RowIndex >= 0)
             {
@@ -63,10 +82,10 @@ namespace Zenehallgatas
                 Console.WriteLine("Elviekben egy row ra kapcsoltam");
 
                 Console.Write(row1.Cells[0].Value.ToString());
-                Console.Write(" "+ row1.Cells[1].Value.ToString());
-                Console.Write(" "+ row1.Cells[2].Value.ToString());
-                Console.Write(" "+ row1.Cells[3].Value.ToString());
-                Console.Write(" "+ row1.Cells[4].Value.ToString());
+                Console.Write(" " + row1.Cells[1].Value.ToString());
+                Console.Write(" " + row1.Cells[2].Value.ToString());
+                Console.Write(" " + row1.Cells[3].Value.ToString());
+                Console.Write(" " + row1.Cells[4].Value.ToString());
 
 
                 // Your code here
