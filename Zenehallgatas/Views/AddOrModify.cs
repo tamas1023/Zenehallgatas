@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zenehallgatas.Model;
 
 namespace Zenehallgatas.Views
 {
@@ -14,31 +15,39 @@ namespace Zenehallgatas.Views
     {
         //hozzaadas vagy modositas
         private bool isAdd;
-        public AddOrModify(string szoveg)
+        private Zene selectedZene;
+        public AddOrModify()
+        {
+            InitializeComponent();
+
+            isAdd = true;
+            AddInitialize();
+            
+        }
+
+        public AddOrModify(Zene zene)
         {
             InitializeComponent();
             
-
-            if (szoveg == "hozzaadas")
-            {
-                isAdd = true;
-                AddInitialize();
-            }
-            else
-            {
-                isAdd = false;
-                ModifyInitialize();
-            }
+            isAdd = false;
+            this.selectedZene = zene;
+            ModifyInitialize();
+            
         }
+
 
         private void ModifyInitialize()
         {
             addOrModifyBTN.Text = "Módosítás";
             titleTB.Enabled = false;
+            titleTB.Text = selectedZene.Title;
             performerTB.Enabled = false;
+            performerTB.Text = selectedZene.Performer;
             releaseDateNumeric.Enabled = false;
+            releaseDateNumeric.Value = selectedZene.ReleaseDate;
             lengthNumeric.Enabled = false;
-
+            lengthNumeric.Value = selectedZene.Length;
+            priorityNumeric.Value = selectedZene.Priority;
         }
 
         private void AddInitialize()
@@ -50,7 +59,7 @@ namespace Zenehallgatas.Views
         {
 
             Program.searchForm.Show();
-            Hide();
+            Dispose();
             
         }
 

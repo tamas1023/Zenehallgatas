@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zenehallgatas.Model
 {
-    internal class Zene
+    public class Zene
     {
         private int id;
         private string title;

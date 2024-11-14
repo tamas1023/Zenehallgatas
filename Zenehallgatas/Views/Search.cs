@@ -50,17 +50,12 @@ namespace Zenehallgatas
         private void ujHozzaadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
          
-            Form addormodify = new AddOrModify("hozzaadas");
+            Form addormodify = new AddOrModify();
             addormodify.Show();
             Hide();
         }
 
-        private void modositasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form addormodify = new AddOrModify("modositas");
-            addormodify.Show();
-            //();
-        }
+
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -82,18 +77,31 @@ namespace Zenehallgatas
 
                 Console.WriteLine("Elviekben egy row ra kapcsoltam");
 
-                Console.Write(row1.Cells[0].Value.ToString());
-                Console.Write(" " + row1.Cells[1].Value.ToString());
-                Console.Write(" " + row1.Cells[2].Value.ToString());
-                Console.Write(" " + row1.Cells[3].Value.ToString());
-                Console.Write(" " + row1.Cells[4].Value.ToString());
+                //Console.Write(row1.Cells[0].Value.ToString());
+                //Console.Write(" " + row1.Cells[1].Value.ToString());
+                //Console.Write(" " + row1.Cells[2].Value.ToString());
+                //Console.Write(" " + row1.Cells[3].Value.ToString());
+                //Console.Write(" " + row1.Cells[4].Value.ToString());
 
+                Console.WriteLine("RowIndex: " + e.RowIndex);
 
-                Form addormodify = new AddOrModify("modositas");
+                Console.WriteLine("");
+
+                Console.WriteLine(row1.Cells.ToString());
+
+                Zene selectedZene = allZene.Find((zene)=>zene.Id == e.RowIndex);
+
+                if (selectedZene != null)
+                {
+                    Console.WriteLine("A kiválasztott: "+selectedZene.ToString());
+                }
+
+                Form addormodify = new AddOrModify(selectedZene);
                 addormodify.Show();
+                
                 Hide();
 
-                // Your code here
+                
             }
         }
 

@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.keresesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ujHozzaadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.performer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,33 +50,26 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.keresesToolStripMenuItem,
-            this.ujHozzaadasToolStripMenuItem,
-            this.modositasToolStripMenuItem});
+            this.ujHozzaadasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1347, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1010, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // keresesToolStripMenuItem
             // 
             this.keresesToolStripMenuItem.Name = "keresesToolStripMenuItem";
-            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
             this.keresesToolStripMenuItem.Text = "kereses";
             // 
             // ujHozzaadasToolStripMenuItem
             // 
             this.ujHozzaadasToolStripMenuItem.Name = "ujHozzaadasToolStripMenuItem";
-            this.ujHozzaadasToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
+            this.ujHozzaadasToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
             this.ujHozzaadasToolStripMenuItem.Text = "uj hozzaadas";
             this.ujHozzaadasToolStripMenuItem.Click += new System.EventHandler(this.ujHozzaadasToolStripMenuItem_Click);
-            // 
-            // modositasToolStripMenuItem
-            // 
-            this.modositasToolStripMenuItem.Name = "modositasToolStripMenuItem";
-            this.modositasToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
-            this.modositasToolStripMenuItem.Text = "modositas";
-            this.modositasToolStripMenuItem.Click += new System.EventHandler(this.modositasToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -91,12 +83,11 @@
             this.createdDate,
             this.length,
             this.priority});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1154, 537);
+            this.dataGridView1.Size = new System.Drawing.Size(866, 414);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -147,26 +138,29 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(1177, 93);
-            this.label1.MaximumSize = new System.Drawing.Size(170, 0);
+            this.label1.Location = new System.Drawing.Point(883, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(128, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 54);
+            this.label1.Size = new System.Drawing.Size(103, 72);
             this.label1.TabIndex = 2;
             this.label1.Text = "Dupla katt az egyes sor elemeikre a módosításhoz";
             // 
             // searchTBOX
             // 
-            this.searchTBOX.Location = new System.Drawing.Point(82, 48);
+            this.searchTBOX.Location = new System.Drawing.Point(62, 39);
+            this.searchTBOX.Margin = new System.Windows.Forms.Padding(2);
             this.searchTBOX.Name = "searchTBOX";
-            this.searchTBOX.Size = new System.Drawing.Size(304, 22);
+            this.searchTBOX.Size = new System.Drawing.Size(252, 20);
             this.searchTBOX.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.Location = new System.Drawing.Point(13, 52);
-            this.label2.MaximumSize = new System.Drawing.Size(170, 0);
+            this.label2.Location = new System.Drawing.Point(10, 42);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.MaximumSize = new System.Drawing.Size(128, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 18);
             this.label2.TabIndex = 4;
@@ -174,9 +168,11 @@
             // 
             // searchBTN
             // 
-            this.searchBTN.Location = new System.Drawing.Point(405, 47);
+            this.searchBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.searchBTN.Location = new System.Drawing.Point(318, 34);
+            this.searchBTN.Margin = new System.Windows.Forms.Padding(2);
             this.searchBTN.Name = "searchBTN";
-            this.searchBTN.Size = new System.Drawing.Size(75, 23);
+            this.searchBTN.Size = new System.Drawing.Size(121, 36);
             this.searchBTN.TabIndex = 5;
             this.searchBTN.Text = "Keresés";
             this.searchBTN.UseVisualStyleBackColor = true;
@@ -184,9 +180,9 @@
             // 
             // Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 645);
+            this.ClientSize = new System.Drawing.Size(1010, 524);
             this.Controls.Add(this.searchBTN);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchTBOX);
@@ -195,7 +191,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Search";
             this.Text = "Kereses";
@@ -212,7 +208,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem keresesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ujHozzaadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modositasToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn performer;
