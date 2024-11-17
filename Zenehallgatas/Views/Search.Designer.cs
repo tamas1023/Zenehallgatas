@@ -54,20 +54,20 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1010, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1010, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // keresesToolStripMenuItem
             // 
             this.keresesToolStripMenuItem.Name = "keresesToolStripMenuItem";
-            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
+            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.keresesToolStripMenuItem.Text = "kereses";
             // 
             // ujHozzaadasToolStripMenuItem
             // 
             this.ujHozzaadasToolStripMenuItem.Name = "ujHozzaadasToolStripMenuItem";
-            this.ujHozzaadasToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
+            this.ujHozzaadasToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.ujHozzaadasToolStripMenuItem.Text = "uj hozzaadas";
             this.ujHozzaadasToolStripMenuItem.Click += new System.EventHandler(this.ujHozzaadasToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(883, 76);
+            this.label1.Location = new System.Drawing.Point(896, 98);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.MaximumSize = new System.Drawing.Size(128, 0);
             this.label1.Name = "label1";
@@ -148,7 +148,7 @@
             // 
             // searchTBOX
             // 
-            this.searchTBOX.Location = new System.Drawing.Point(62, 39);
+            this.searchTBOX.Location = new System.Drawing.Point(77, 40);
             this.searchTBOX.Margin = new System.Windows.Forms.Padding(2);
             this.searchTBOX.Name = "searchTBOX";
             this.searchTBOX.Size = new System.Drawing.Size(252, 20);
@@ -169,7 +169,7 @@
             // searchBTN
             // 
             this.searchBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.searchBTN.Location = new System.Drawing.Point(318, 34);
+            this.searchBTN.Location = new System.Drawing.Point(339, 34);
             this.searchBTN.Margin = new System.Windows.Forms.Padding(2);
             this.searchBTN.Name = "searchBTN";
             this.searchBTN.Size = new System.Drawing.Size(121, 36);
@@ -195,6 +195,8 @@
             this.MaximizeBox = false;
             this.Name = "Search";
             this.Text = "Kereses";
+            this.Load += new System.EventHandler(this.Search_Load);
+            this.VisibleChanged += new System.EventHandler(this.Search_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

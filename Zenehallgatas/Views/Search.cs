@@ -18,19 +18,25 @@ namespace Zenehallgatas
 
         ZeneController controller = ZeneController.getInstance();
         List<Zene> allZene;
+        bool visibility = false;
         public Search()
         {
             InitializeComponent();
-            
+
+            //getAllZene();
+        }
+
+        private void getAllZene()
+        {
             allZene = controller.getAllZeneList();
             Console.WriteLine(allZene);
             dataGridView1.Columns.Clear();
 
-            
+
             dataGridView1.AllowUserToOrderColumns = true;
 
             dataGridView1.Columns.Add("id", "id");
-            dataGridView1.Columns.Add ("title", "Cím");
+            dataGridView1.Columns.Add("title", "Cím");
             dataGridView1.Columns.Add("performer", "Előadó");
             dataGridView1.Columns.Add("releaseDate", "Kiadás éve");
             dataGridView1.Columns.Add("length", "Hossz");
@@ -116,6 +122,27 @@ namespace Zenehallgatas
             Console.WriteLine(allZene.Count);
             Console.WriteLine(fileredZene.Count);
 
+            List<Zene> newFilteredZene= allZene.FindAll(z =>z.Title == searchTBOX.Text || z.Performer == searchTBOX.Text);
+
+
+        }
+
+        private void Search_Load(object sender, EventArgs e)
+        {
+            getAllZene();
+        }
+
+        private void Search_VisibleChanged(object sender, EventArgs e)
+        {
+            if (visibility)
+            {
+                visibility = false;
+            }
+            else
+            {
+                visibility = true;
+                getAllZene();
+            }
         }
     }
 }

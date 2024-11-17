@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zenehallgatas.Controller;
 using Zenehallgatas.Model;
 
 namespace Zenehallgatas.Views
 {
     public partial class AddOrModify : Form
     {
+        ZeneController controller = ZeneController.getInstance();
+
         //hozzaadas vagy modositas
         private bool isAdd;
         private Zene selectedZene;
@@ -87,6 +90,26 @@ namespace Zenehallgatas.Views
             Console.WriteLine(releaseDateNumeric.Text);
             Console.WriteLine(lengthNumeric.Text);
             Console.WriteLine(priorityNumeric.Text);
+            if (titleTB.Text.Length != 0 && performerTB.Text.Length != 0)
+            {
+                //itt mindegy hogy milyen ud-t adok meg, mert majd azt úgy is autoincrement el adjuk hozzá
+                bool isSuccessfull = controller.addZene(new Zene(1234, titleTB.Text, performerTB.Text,
+                    (int)releaseDateNumeric.Value,
+                    (int)lengthNumeric.Value,
+                    (int)priorityNumeric.Value));
+                if (isSuccessfull)
+                {
+                    Console.WriteLine("Sikeres hozzáadás");
+                    MessageBox.Show("Sikeres hozzáadás","Siker",MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Hiba az adatbázis hozzáadása során, nagy valószínűséggel van már ilyen néven zene");
+                    MessageBox.Show("Hiba az adatbázis hozzáadása során, nagy valószínűséggel van már ilyen néven zene", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            Console.WriteLine("A Cím vagy az előadó üres");
         }
 
         private void ModifyZene()

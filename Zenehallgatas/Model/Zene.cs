@@ -15,15 +15,7 @@ namespace Zenehallgatas.Model
         private int length;
         private int priority;
 
-        public Zene()
-        {
-            this.id = -1;
-            this.title = String.Empty;
-            this.performer= String.Empty;
-            this.releaseDate = -1;
-            this.length = 0;
-            this.priority = 0;
-        }
+        
 
         public Zene(int id,string title, string performer, int releaseDate,int length, int priority)
         {

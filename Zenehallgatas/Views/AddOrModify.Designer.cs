@@ -54,14 +54,15 @@
             this.keresesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(715, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(536, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // keresesToolStripMenuItem
             // 
             this.keresesToolStripMenuItem.Name = "keresesToolStripMenuItem";
-            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
+            this.keresesToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.keresesToolStripMenuItem.Text = "kereses";
             this.keresesToolStripMenuItem.Click += new System.EventHandler(this.keresesToolStripMenuItem_Click);
             // 
@@ -69,8 +70,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.6F);
-            this.titleLabel.Location = new System.Drawing.Point(16, 73);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(12, 59);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(64, 32);
             this.titleLabel.TabIndex = 2;
@@ -78,23 +78,31 @@
             // 
             // releaseDateNumeric
             // 
-            this.releaseDateNumeric.Location = new System.Drawing.Point(335, 246);
-            this.releaseDateNumeric.Margin = new System.Windows.Forms.Padding(4);
+            this.releaseDateNumeric.Location = new System.Drawing.Point(251, 200);
             this.releaseDateNumeric.Maximum = new decimal(new int[] {
             1661992960,
             1808227885,
             5,
             0});
+            this.releaseDateNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.releaseDateNumeric.Name = "releaseDateNumeric";
-            this.releaseDateNumeric.Size = new System.Drawing.Size(160, 22);
+            this.releaseDateNumeric.Size = new System.Drawing.Size(120, 20);
             this.releaseDateNumeric.TabIndex = 3;
+            this.releaseDateNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // performerLabel
             // 
             this.performerLabel.AutoSize = true;
             this.performerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.6F);
-            this.performerLabel.Location = new System.Drawing.Point(16, 150);
-            this.performerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.performerLabel.Location = new System.Drawing.Point(12, 122);
             this.performerLabel.Name = "performerLabel";
             this.performerLabel.Size = new System.Drawing.Size(104, 32);
             this.performerLabel.TabIndex = 4;
@@ -104,8 +112,7 @@
             // 
             this.releaseDateLabel.AutoSize = true;
             this.releaseDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.6F);
-            this.releaseDateLabel.Location = new System.Drawing.Point(16, 246);
-            this.releaseDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.releaseDateLabel.Location = new System.Drawing.Point(12, 200);
             this.releaseDateLabel.Name = "releaseDateLabel";
             this.releaseDateLabel.Size = new System.Drawing.Size(155, 32);
             this.releaseDateLabel.TabIndex = 5;
@@ -115,8 +122,7 @@
             // 
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.6F);
-            this.lengthLabel.Location = new System.Drawing.Point(16, 315);
-            this.lengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lengthLabel.Location = new System.Drawing.Point(12, 256);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(176, 32);
             this.lengthLabel.TabIndex = 6;
@@ -126,8 +132,7 @@
             // 
             this.priority.AutoSize = true;
             this.priority.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.6F);
-            this.priority.Location = new System.Drawing.Point(16, 411);
-            this.priority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.priority.Location = new System.Drawing.Point(12, 334);
             this.priority.Name = "priority";
             this.priority.Size = new System.Drawing.Size(119, 32);
             this.priority.TabIndex = 7;
@@ -135,50 +140,71 @@
             // 
             // lengthNumeric
             // 
-            this.lengthNumeric.Location = new System.Drawing.Point(335, 325);
-            this.lengthNumeric.Margin = new System.Windows.Forms.Padding(4);
+            this.lengthNumeric.Location = new System.Drawing.Point(251, 264);
             this.lengthNumeric.Maximum = new decimal(new int[] {
             1661992960,
             1808227885,
             5,
             0});
+            this.lengthNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.lengthNumeric.Name = "lengthNumeric";
-            this.lengthNumeric.Size = new System.Drawing.Size(160, 22);
+            this.lengthNumeric.Size = new System.Drawing.Size(120, 20);
             this.lengthNumeric.TabIndex = 8;
+            this.lengthNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // priorityNumeric
             // 
-            this.priorityNumeric.Location = new System.Drawing.Point(335, 411);
-            this.priorityNumeric.Margin = new System.Windows.Forms.Padding(4);
+            this.priorityNumeric.Location = new System.Drawing.Point(251, 334);
             this.priorityNumeric.Maximum = new decimal(new int[] {
             1661992960,
             1808227885,
             5,
             0});
+            this.priorityNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.priorityNumeric.Name = "priorityNumeric";
-            this.priorityNumeric.Size = new System.Drawing.Size(160, 22);
+            this.priorityNumeric.Size = new System.Drawing.Size(120, 20);
             this.priorityNumeric.TabIndex = 9;
+            this.priorityNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // titleTB
             // 
-            this.titleTB.Location = new System.Drawing.Point(335, 82);
+            this.titleTB.Location = new System.Drawing.Point(251, 67);
+            this.titleTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.titleTB.Name = "titleTB";
-            this.titleTB.Size = new System.Drawing.Size(160, 22);
+            this.titleTB.Size = new System.Drawing.Size(121, 20);
             this.titleTB.TabIndex = 10;
             // 
             // performerTB
             // 
-            this.performerTB.Location = new System.Drawing.Point(335, 160);
+            this.performerTB.Location = new System.Drawing.Point(251, 130);
+            this.performerTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.performerTB.Name = "performerTB";
-            this.performerTB.Size = new System.Drawing.Size(160, 22);
+            this.performerTB.Size = new System.Drawing.Size(121, 20);
             this.performerTB.TabIndex = 11;
             // 
             // addOrModifyBTN
             // 
             this.addOrModifyBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.addOrModifyBTN.Location = new System.Drawing.Point(525, 403);
+            this.addOrModifyBTN.Location = new System.Drawing.Point(394, 327);
+            this.addOrModifyBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addOrModifyBTN.Name = "addOrModifyBTN";
-            this.addOrModifyBTN.Size = new System.Drawing.Size(154, 40);
+            this.addOrModifyBTN.Size = new System.Drawing.Size(116, 32);
             this.addOrModifyBTN.TabIndex = 12;
             this.addOrModifyBTN.Text = "button1";
             this.addOrModifyBTN.UseVisualStyleBackColor = true;
@@ -186,9 +212,9 @@
             // 
             // AddOrModify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 554);
+            this.ClientSize = new System.Drawing.Size(536, 450);
             this.Controls.Add(this.addOrModifyBTN);
             this.Controls.Add(this.performerTB);
             this.Controls.Add(this.titleTB);
@@ -202,7 +228,6 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddOrModify";
             this.Text = "HozzadasVagyModositas";
