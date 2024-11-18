@@ -119,6 +119,17 @@ namespace Zenehallgatas.Views
             Console.WriteLine(releaseDateNumeric.Text);
             Console.WriteLine(lengthNumeric.Text);
             Console.WriteLine(priorityNumeric.Text);
+
+            Zene zene = new Zene(selectedZene.Id, titleTB.Text, performerTB.Text,
+                Convert.ToInt32( releaseDateNumeric.Text), Convert.ToInt32(lengthNumeric.Text), 
+                Convert.ToInt32(priorityNumeric.Text));
+            if (zene == null) return;
+            bool isSussessfull = controller.modifyZene(zene);
+
+            if (isSussessfull)
+            {
+                MessageBox.Show("Sikeres módosítás", "Siker");
+            }
         }
     }
 }

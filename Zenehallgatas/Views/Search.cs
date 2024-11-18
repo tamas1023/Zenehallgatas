@@ -75,26 +75,15 @@ namespace Zenehallgatas
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine("Clickelés elvilekben ez mindig lefut");
+            //Clickelés elvilekben ez mindig lefut
             if (e.RowIndex >= 0)
             {
                 // Get the selected row
                 DataGridViewRow row1 = dataGridView1.Rows[e.RowIndex];
 
-                Console.WriteLine("Elviekben egy row ra kapcsoltam");
-
-                //Console.Write(row1.Cells[0].Value.ToString());
-                //Console.Write(" " + row1.Cells[1].Value.ToString());
-                //Console.Write(" " + row1.Cells[2].Value.ToString());
-                //Console.Write(" " + row1.Cells[3].Value.ToString());
-                //Console.Write(" " + row1.Cells[4].Value.ToString());
-
-                Console.WriteLine("RowIndex: " + e.RowIndex);
-
-                Console.WriteLine("");
-
                 Console.WriteLine(row1.Cells.ToString());
 
+                //A rowindex 0 tól intul, ezért kell ide + 1
                 Zene selectedZene = allZene.Find((zene)=>zene.Id == e.RowIndex + 1);
 
                 if (selectedZene != null)

@@ -127,6 +127,7 @@ namespace Zenehallgatas.DAO
                 allZene.Add(tempZene);
             }
 
+            allZene = allZene.OrderByDescending(s => s.Priority).ToList();
             return allZene;
         }
 
@@ -165,7 +166,31 @@ namespace Zenehallgatas.DAO
 
         public bool modifyZene(Zene zene)
         {
-            //update
+
+            using (SQLiteConnection conn = new SQLiteConnection(s_connection_string))
+            {
+                conn.Open();
+
+                using (SQLiteCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE Zenek SET Priority = @Priority WHERE ID = @ID ";
+
+                    cmd.Parameters.Add("Priority", System.Data.DbType.String).Value =  zene.Priority;
+                    cmd.Parameters.Add("ID", System.Data.DbType.Int32).Value = zene.Id;
+
+                    int row = cmd.ExecuteNonQuery();
+
+                    if (row != 1)
+                    {
+                        return false;
+                    }
+                }
+
+
+                conn.Close();
+            }
+
+
             return true;
         }
     }
