@@ -101,8 +101,8 @@ namespace Zenehallgatas
                 {
                     Console.WriteLine("A kiválasztott: "+selectedZene.ToString());
                 }
-
-                Form addormodify = new AddOrModify(selectedZene);
+                //mert 1 től megy az index az sqlite ban
+                Form addormodify = new AddOrModify(selectedZene.Id + 1);
                 addormodify.Show();
                 
                 Hide();
@@ -130,6 +130,7 @@ namespace Zenehallgatas
         private void Search_Load(object sender, EventArgs e)
         {
             getAllZene();
+            
         }
 
         private void Search_VisibleChanged(object sender, EventArgs e)
@@ -142,6 +143,7 @@ namespace Zenehallgatas
             {
                 visibility = true;
                 getAllZene();
+                
             }
         }
     }

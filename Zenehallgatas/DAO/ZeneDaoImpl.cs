@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Zenehallgatas.Model;
 
 namespace Zenehallgatas.DAO
@@ -20,10 +21,23 @@ namespace Zenehallgatas.DAO
             {
                 conn.Open();
 
-                //ellenőrizzük hogy van e ilyen nevű az adatbázisban
-                // lekérdezzük hogy van e ilyen névvel, és ha van akkor return false
+                using(SQLiteCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * from Zenek WHERE Title LIKE  @Title ";
 
+                    cmd.Parameters.Add("Title", System.Data.DbType.String).Value = "%"+ zene.Title+"%";
 
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            
+                            return false;
+                        }
+
+                    };
+                }
+                
                 using(SQLiteCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = "INSERT INTO Zenek " +
@@ -74,6 +88,7 @@ namespace Zenehallgatas.DAO
 
                         using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
+
                             allZene = ReadZenekFromReader(reader);
                         };
                     };
@@ -98,6 +113,7 @@ namespace Zenehallgatas.DAO
             List<Zene> allZene = new List<Zene>();
             while (reader.Read())
             {
+
                 
                 int Id = reader.GetInt32(reader.GetOrdinal("ID"));
                 string Title = reader.GetString(reader.GetOrdinal("Title"));
@@ -116,10 +132,35 @@ namespace Zenehallgatas.DAO
 
         public Zene getZene(int id)
         {
-            //select
+            using (SQLiteConnection conn = new SQLiteConnection(s_connection_string))
+            {
+                conn.Open();
 
-            //a returnt majd át kell írni
-            return new Zene(0, "Cím", "Valki", 2024, 1, 1);
+                using (SQLiteCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * from Zenek WHERE ID = @ID";
+
+                    cmd.Parameters.Add("ID", System.Data.DbType.String).Value = id;
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            int Id = reader.GetInt32(reader.GetOrdinal("ID"));
+                            string Title = reader.GetString(reader.GetOrdinal("Title"));
+                            string Performer = reader.GetString(reader.GetOrdinal("Performer"));
+                            int ReleaseDate = reader.GetInt32(reader.GetOrdinal("ReleaseDate"));
+                            int Length = reader.GetInt32(reader.GetOrdinal("Length"));
+                            int Priority = reader.GetInt32(reader.GetOrdinal("Priority"));
+
+
+                            return new Zene(Id, Title, Performer, ReleaseDate, Length, Priority);
+                        }
+                        return new Zene(-1, "Baj van", "Nagyon", 2024, 10, 3);
+
+                    };
+                };
+            };
         }
 
         public bool modifyZene(Zene zene)

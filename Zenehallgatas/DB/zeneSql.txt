@@ -1,0 +1,9 @@
+CREATE TABLE Zenek (
+  ID integer not null primary key autoincrement,
+  Title text not null,
+  Performer text not null,
+  ReleaseDate integer not null,
+  Length integer not null,
+  Priority integer not null,
+  unique(Title)
+);

@@ -28,12 +28,12 @@ namespace Zenehallgatas.Views
             
         }
 
-        public AddOrModify(Zene zene)
+        public AddOrModify(int id)
         {
             InitializeComponent();
             
             isAdd = false;
-            this.selectedZene = zene;
+            this.selectedZene = controller.getZene(id);
             ModifyInitialize();
             
         }
