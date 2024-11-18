@@ -95,14 +95,14 @@ namespace Zenehallgatas
 
                 Console.WriteLine(row1.Cells.ToString());
 
-                Zene selectedZene = allZene.Find((zene)=>zene.Id == e.RowIndex);
+                Zene selectedZene = allZene.Find((zene)=>zene.Id == e.RowIndex + 1);
 
                 if (selectedZene != null)
                 {
                     Console.WriteLine("A kiválasztott: "+selectedZene.ToString());
                 }
                 //mert 1 től megy az index az sqlite ban
-                Form addormodify = new AddOrModify(selectedZene.Id + 1);
+                Form addormodify = new AddOrModify(selectedZene.Id);
                 addormodify.Show();
                 
                 Hide();
